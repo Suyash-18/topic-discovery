@@ -9,4 +9,3 @@ def anomaly_lof(X, n_neighbors=5):
     lof = LocalOutlierFactor(n_neighbors=n_neighbors, metric="cosine")
     outliers = lof.fit_predict(X)
     return outliers
-
