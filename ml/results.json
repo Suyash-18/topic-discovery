@@ -1,0 +1,26 @@
+{
+  "method": "embeddings",
+  "plot_path": "cluster_plot.png",
+  "documents": [
+    {
+      "document": "The stock market crashed due to global inflation",
+      "cluster": -1,
+      "anomaly": false
+    },
+    {
+      "document": "Football players are training hard for the world cup",
+      "cluster": -1,
+      "anomaly": false
+    },
+    {
+      "document": "Deep learning models improve with more data",
+      "cluster": -1,
+      "anomaly": false
+    },
+    {
+      "document": "Banana is a fruit with high potassium",
+      "cluster": -1,
+      "anomaly": false
+    }
+  ]
+}
