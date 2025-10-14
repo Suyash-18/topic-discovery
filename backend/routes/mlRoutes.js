@@ -1,8 +1,12 @@
+// backend/routes/mlRoutes.js
 import express from "express";
-import { processDocs } from "../controllers/mlController.js";
+import multer from "multer";
+import { analyzeText } from "../controllers/mlController.js";
 
 const router = express.Router();
+const upload = multer({ dest: "uploads/" });
 
-router.get("/process", processDocs);
+router.post("/analyze", upload.single("file"), analyzeText);
 
 export default router;
+        

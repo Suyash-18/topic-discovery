@@ -1,6 +1,10 @@
-numpy
+PyPDF2
 pandas
+sentence-transformers
+keybert
+transformers
 scikit-learn
 nltk
-sentence-transformers
+seaborn
 matplotlib
+torch

@@ -1,17 +1,22 @@
+# ml/utils/preprocess.py
 import re
-import nltk
-from nltk.corpus import stopwords
-from nltk.stem import WordNetLemmatizer
+from nltk.tokenize import sent_tokenize
 
-nltk.download("stopwords")
-nltk.download("wordnet")
+def clean_text(text: str) -> str:
+    """Remove unnecessary symbols, URLs, and extra spaces."""
+    text = re.sub(r"http\S+|www\S+|https\S+", '', text)
+    text = re.sub(r"[^A-Za-z0-9.,!?;:\s]", '', text)
+    text = re.sub(r"\s+", ' ', text).strip()
+    return text
 
-stop_words = set(stopwords.words("english"))
-lemmatizer = WordNetLemmatizer()
-
-def clean_text(text):
-    text = text.lower()
-    text = re.sub(r"[^a-zA-Z\s]", "", text)
-    tokens = text.split()
-    tokens = [lemmatizer.lemmatize(w) for w in tokens if w not in stop_words]
-    return " ".join(tokens)
+def split_into_sentences(text: str):
+    """Split text into sentences for analysis."""
+    try:
+        sentences = sent_tokenize(text)
+        if len(sentences) == 0:
+            sentences = [text]
+        return sentences
+    except LookupError:
+        import nltk
+        nltk.download('punkt')
+        return sent_tokenize(text)

@@ -1,22 +1,35 @@
-[
-  {
-    "document": "The stock market crashed due to global inflation",
-    "cluster": -1,
-    "anomaly": false
+{
+  "num_sentences": 3,
+  "keywords": [
+    "football",
+    "economy",
+    "industries",
+    "tournaments",
+    "training",
+    "learning",
+    "players",
+    "inflation",
+    "artificial",
+    "intelligence"
+  ],
+  "summary": "Artificial intelligence and machine learning are transforming industries. The economy faces inflation and instability. Football players are training hard for tournaments. The world of football is in a state of flux. The game is in danger of becoming a spectator sport in the U.S.",
+  "clusters": {
+    "0": [
+      "The economy faces inflation and instability."
+    ],
+    "1": [
+      "Football players are training hard for tournaments."
+    ],
+    "2": [
+      "Artificial intelligence and machine learning are transforming industries."
+    ]
   },
-  {
-    "document": "Football players are training hard for the world cup",
-    "cluster": -1,
-    "anomaly": false
-  },
-  {
-    "document": "Deep learning models improve with more data",
-    "cluster": -1,
-    "anomaly": false
-  },
-  {
-    "document": "Banana is a fruit with high potassium",
-    "cluster": -1,
-    "anomaly": false
+  "anomalies": [
+    2
+  ],
+  "files": {
+    "heatmap": "C:\\Users\\suuas\\OneDrive\\Desktop\\Gaikwad Poly\\topic discovery\\ml\\output\\heatmap.png",
+    "clusters": "C:\\Users\\suuas\\OneDrive\\Desktop\\Gaikwad Poly\\topic discovery\\ml\\output\\clusters.png",
+    "results": "C:\\Users\\suuas\\OneDrive\\Desktop\\Gaikwad Poly\\topic discovery\\ml\\output\\results.json"
   }
-]
+}
