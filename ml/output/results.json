@@ -1,35 +1,50 @@
 {
-  "num_sentences": 3,
+  "num_sentences": 13,
   "keywords": [
-    "football",
-    "economy",
-    "industries",
-    "tournaments",
-    "training",
-    "learning",
-    "players",
-    "inflation",
-    "artificial",
-    "intelligence"
+    "marketplace",
+    "marketplaces",
+    "ecommerce",
+    "authenticated",
+    "buyer",
+    "buyers",
+    "commerce",
+    "secure",
+    "registration",
+    "seller"
   ],
-  "summary": "Artificial intelligence and machine learning are transforming industries. The economy faces inflation and instability. Football players are training hard for tournaments. The world of football is in a state of flux. The game is in danger of becoming a spectator sport in the U.S.",
+  "summary": "Secure SecondHand Marketplace is a revolutionary secondhand marketplace that aims to change the dynamics of buying and selling secondhand items. The marketplace brings together the buyer, the seller, and the administrator under a single ecosystem using the simplest issues of security, reliability, and convenience. Sellers benefit from the ability to create detailed product descriptions that are accompanied by images, descriptive texts, and competitive prices. Buyers are ensured a safe and easytouse platform for viewing, comparing, and buying secondhand goods easily.",
   "clusters": {
     "0": [
-      "The economy faces inflation and instability."
+      "Sellers benefit from the ability to create detailed product descriptions that are accompanied by images, descriptive texts, and competitive prices, thereby making their marketplace highly visible to potential consumers.",
+      "On the other hand, buyers are ensured a safe and easytouse platform for viewing, comparing, and buying secondhand items easily."
     ],
     "1": [
-      "Football players are training hard for tournaments."
+      "The marketplace finally intends to develop a scaleable and secure platform for secondhand trade that closes the gap between technology and consumer confidence in the digital economy."
     ],
     "2": [
-      "Artificial intelligence and machine learning are transforming industries."
+      "The marketplace brings together the buyer, the seller, and the administrator under a single ecosystem using the simplest issues of security, reliability, and convenience that are otherwise associated with conventional secondhand buying and selling habits.",
+      "Administrators manage the marketplace for the purposes of ensuring regulation adherence, controlling the moderation of the marketplaces contents, and ensuring a safe and credible trading platform.",
+      "Such features include rolebased verification for authenticated interaction, secure payment mechanisms that help secure monetary transactions, and realtime communication functionalities such as chat and notices that help seamless negotiations between the buyer and the seller.",
+      "The platform also incorporates dataoriented insights such as demand patterns and pricing models, facilitating the making of informed decisions by the users."
+    ],
+    "3": [
+      "Once the registration process is complete, users are provided access to a personalized interface that is designed to accommodate their unique roles.",
+      "Other incorporated systems such as verification of the users, fraudproofing, and transparent rating mechanisms are deployed for the purposes of validating confidence and reduction of risk."
+    ],
+    "4": [
+      "Secure SecondHand Marketplace is a revolutionary secondhand marketplace that aims to change the dynamics of buying and selling secondhand items through trust, transparency, and access to ecommerce.",
+      "Beyond the facilitation of simple transactions, the Secure SecondHand Marketplace incorporates powerful features that boost usability and credibility.",
+      "By combining the efficiency of ecommerce and increased security controls, the Secure SecondHand Marketplace demonstrates a sustainable way of commerce.",
+      "Not only does the marketplace allow for the efficient utilization of secondhand goods but also for environmental sustainability by encouraging the reuse of items and reducing the generation of wastes."
     ]
   },
   "anomalies": [
-    2
+    2,
+    9
   ],
   "files": {
-    "heatmap": "C:\\Users\\suuas\\OneDrive\\Desktop\\Gaikwad Poly\\topic discovery\\ml\\output\\heatmap.png",
-    "clusters": "C:\\Users\\suuas\\OneDrive\\Desktop\\Gaikwad Poly\\topic discovery\\ml\\output\\clusters.png",
-    "results": "C:\\Users\\suuas\\OneDrive\\Desktop\\Gaikwad Poly\\topic discovery\\ml\\output\\results.json"
+    "heatmap": "/output/heatmap.png",
+    "clusters": "/output/clusters.png",
+    "results": "/output/results.json"
   }
 }

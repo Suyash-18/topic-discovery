@@ -1,33 +1,21 @@
-import React, { useEffect, useState } from "react";
-import ClusterPlot from "./components/ClusterPlot";
-import SimilarityHeatmap from "./components/SimilarityHeatmap";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
+import DashboardPage from './pages/DashboardPage';
+import ClustersPage from './pages/ClustersPage';
 
 function App() {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    // Replace with real backend call later
-    fetch("/sample-results.json")
-      .then(res => res.json())
-      .then(setData);
-  }, []);
-
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Anomalous Topic Discovery</h1>
-      {data && (
-        <>
-          <ClusterPlot
-            pcaPoints={data.pca_points}
-            documents={data.documents}
-          />
-          <SimilarityHeatmap
-            simMatrix={data.similarity_matrix}
-            documents={data.documents}
-          />
-        </>
-      )}
-    </div>
+    <BrowserRouter>
+      <div className="bg-gray-50 min-h-screen text-gray-800">
+        <Header />
+        <main className="container mx-auto p-4 sm:p-6 md:p-8">
+          <Routes>
+            <Route path="/" element={<DashboardPage />} />
+            <Route path="/clusters" element={<ClustersPage />} />
+          </Routes>
+        </main>
+      </div>
+    </BrowserRouter>
   );
 }
 

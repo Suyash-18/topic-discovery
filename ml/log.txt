@@ -12,3 +12,85 @@ Device set to use cpu
 Your max_length is set to 120, but your input_length is only 26. Since this is a summarization task, where outputs shorter than the input are typically wanted, you might consider decreasing max_length manually, e.g. summarizer('...', max_length=13)
 
 --------------
+
+[2025-10-14T10:16:25.266Z] Exit Code: 0
+--- STDERR ---
+Device set to use cpu
+
+--------------
+
+[2025-10-14T10:17:24.062Z] Exit Code: 0
+--- STDERR ---
+Device set to use cpu
+
+--------------
+
+[2025-10-14T10:26:36.326Z] Exit Code: 0
+--- STDERR ---
+Device set to use cpu
+
+--------------
+
+[2025-10-14T10:30:17.178Z] Exit Code: 0
+--- STDERR ---
+Device set to use cpu
+
+--------------
+
+[2025-10-14T10:41:46.172Z] Exit Code: 0
+--- STDERR ---
+Device set to use cpu
+
+--------------
+
+[2025-10-14T10:47:02.591Z] Exit Code: 1
+--- STDERR ---
+\U0001f525 An error occurred in main.py: Unsupported file format. Supported: .pdf, .csv, .txt
+Traceback (most recent call last):
+  File "C:\Users\suuas\OneDrive\Desktop\Gaikwad Poly\topic discovery\ml\main.py", line 128, in <module>
+    run_from_stdin()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\suuas\OneDrive\Desktop\Gaikwad Poly\topic discovery\ml\main.py", line 93, in run_from_stdin
+    text = read_file(payload["file"])
+  File "C:\Users\suuas\OneDrive\Desktop\Gaikwad Poly\topic discovery\ml\utils\file_reader.py", line 31, in read_file
+    raise ValueError("Unsupported file format. Supported: .pdf, .csv, .txt")
+ValueError: Unsupported file format. Supported: .pdf, .csv, .txt
+
+--------------
+
+[2025-10-14T10:54:16.638Z] Exit Code: 1
+--- STDERR ---
+\U0001f525 An error occurred in main.py: Provide either 'text' or ('filePath' and 'originalName') in the JSON stdin payload.
+Traceback (most recent call last):
+  File "C:\Users\suuas\OneDrive\Desktop\Gaikwad Poly\topic discovery\ml\main.py", line 132, in <module>
+    run_from_stdin()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\suuas\OneDrive\Desktop\Gaikwad Poly\topic discovery\ml\main.py", line 101, in run_from_stdin
+    raise ValueError("Provide either 'text' or ('filePath' and 'originalName') in the JSON stdin payload.")
+ValueError: Provide either 'text' or ('filePath' and 'originalName') in the JSON stdin payload.
+
+--------------
+
+[2025-10-14T10:57:02.492Z] Exit Code: 0
+--- STDERR ---
+Device set to use cpu
+
+--------------
+
+[2025-10-14T11:12:32.596Z] Exit Code: 0
+--- STDERR ---
+Device set to use cpu
+
+--------------
+
+[2025-10-16T03:53:10.338Z] Exit Code: 0
+--- STDERR ---
+Device set to use cpu
+
+--------------
+
+[2025-10-16T06:19:14.401Z] Exit Code: 0
+--- STDERR ---
+Device set to use cpu
+
+--------------

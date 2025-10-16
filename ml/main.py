@@ -43,9 +43,17 @@ def analyze_text(input_text: str, n_clusters=5):
     keywords = extract_keywords(cleaned)
     summary = summarize_text(cleaned)
 
-    # Save visualizations
-    heatmap_path = os.path.join(OUTPUT_DIR, "heatmap.png")
-    clusters_path = os.path.join(OUTPUT_DIR, "clusters.png")
+    # Define filenames for the output files
+    heatmap_filename = "heatmap.png"
+    clusters_filename = "clusters.png"
+    results_filename = "results.json"
+
+    # Create full paths for saving the files locally
+    heatmap_path = os.path.join(OUTPUT_DIR, heatmap_filename)
+    clusters_path = os.path.join(OUTPUT_DIR, clusters_filename)
+    results_path = os.path.join(OUTPUT_DIR, results_filename)
+    
+    # Save visualizations using the full local paths
     plot_similarity_heatmap(sim_matrix, heatmap_path)
     plot_clusters(embeddings, labels, clusters_path)
 
@@ -57,17 +65,18 @@ def analyze_text(input_text: str, n_clusters=5):
         "clusters": {str(i): [] for i in range(n_clusters)},
         "anomalies": anomalies.tolist(),
         "files": {
-            "heatmap": heatmap_path,
-            "clusters": clusters_path,
-            "results": os.path.join(OUTPUT_DIR, "results.json")
+            # Return URL-friendly paths for the frontend
+            "heatmap": f"/output/{heatmap_filename}",
+            "clusters": f"/output/{clusters_filename}",
+            "results": f"/output/{results_filename}"
         }
     }
-
+    
     for i, label in enumerate(labels):
         result["clusters"][str(label)].append(sentences[i])
 
-    # Save results.json
-    with open(result["files"]["results"], "w", encoding="utf-8") as f:
+    # Save results.json using the full local path
+    with open(results_path, "w", encoding="utf-8") as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
 
     return result
@@ -76,12 +85,20 @@ def run_from_stdin():
     """Reads JSON payload from stdin and triggers analysis."""
     payload = json.load(sys.stdin)
     text = ""
-    if "file" in payload and payload["file"]:
-        text = read_file(payload["file"])
+    
+    # --- 🔽 MODIFICATION START 🔽 ---
+    # Check for the new keys from the Node.js controller to handle file uploads correctly
+    if "filePath" in payload and "originalName" in payload:
+        file_path = payload["filePath"]
+        original_name = payload["originalName"]
+        # Pass both the temp path and original name to the file reader
+        text = read_file(file_path, original_name)
+    # --- 🔼 MODIFICATION END 🔼 ---
+
     elif "text" in payload and payload["text"]:
         text = payload["text"]
     else:
-        raise ValueError("Provide either 'text' or 'file' in the JSON stdin payload.")
+        raise ValueError("Provide either 'text' or ('filePath' and 'originalName') in the JSON stdin payload.")
 
     n_clusters = int(payload.get("n_clusters", 5))
     result = analyze_text(text, n_clusters=n_clusters)
@@ -90,6 +107,7 @@ def run_from_stdin():
 def run_from_args():
     """Parses command-line arguments and triggers analysis."""
     parser = argparse.ArgumentParser(description="Analyze text for topics, keywords, and anomalies.")
+    # The read_file function now requires two arguments when called from here
     parser.add_argument("--file", type=str, help="Path to input file (.pdf, .csv, .txt)")
     parser.add_argument("--text", type=str, help="Direct text input")
     parser.add_argument("--n_clusters", type=int, default=5, help="Number of clusters to create.")
@@ -97,7 +115,8 @@ def run_from_args():
     
     text = ""
     if args.file:
-        text = read_file(args.file)
+        # When running from command line, the file path and name are the same
+        text = read_file(args.file, args.file)
     elif args.text:
         text = args.text
     else:
@@ -109,16 +128,11 @@ def run_from_args():
 
 if __name__ == "__main__":
     try:
-        # This logic determines whether the script is being fed data from another process
-        # (like your Node.js server) or being run directly in the terminal.
         if not sys.stdin.isatty():
             run_from_stdin()
         else:
             run_from_args()
     except Exception as e:
-        # This is a crucial block for debugging. It catches ANY error,
-        # prints a detailed traceback to stderr (which Node.js will log),
-        # and exits with an error code.
         print(f"🔥 An error occurred in main.py: {str(e)}", file=sys.stderr)
         traceback.print_exc(file=sys.stderr)
         sys.exit(1)

@@ -3,13 +3,18 @@ import os
 import pandas as pd
 from PyPDF2 import PdfReader
 
-def read_file(file_path: str) -> str:
-    file_path = os.path.abspath(file_path)
+# --- 🔽 MODIFICATION START 🔽 ---
+def read_file(file_path: str, original_name: str) -> str:
+    """
+    Reads content from a file, determining the file type from the original_name.
+    """
     if not os.path.exists(file_path):
         raise FileNotFoundError(f"File not found: {file_path}")
 
-    ext = os.path.splitext(file_path)[1].lower()
+    # Use the original_name to get the correct file extension
+    ext = os.path.splitext(original_name)[1].lower()
     text_data = ""
+# --- 🔼 MODIFICATION END 🔼 ---
 
     if ext == ".pdf":
         reader = PdfReader(file_path)
@@ -20,7 +25,6 @@ def read_file(file_path: str) -> str:
 
     elif ext == ".csv":
         df = pd.read_csv(file_path, dtype=str, keep_default_na=False)
-        # join all cells into one big string
         text_data = " ".join(df.fillna("").astype(str).values.flatten().tolist())
 
     elif ext == ".txt":
@@ -28,6 +32,7 @@ def read_file(file_path: str) -> str:
             text_data = f.read()
 
     else:
-        raise ValueError("Unsupported file format. Supported: .pdf, .csv, .txt")
+        # This error check is now reliable
+        raise ValueError(f"Unsupported file format '{ext}'. Supported: .pdf, .csv, .txt")
 
     return text_data.strip()
