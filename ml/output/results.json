@@ -1,46 +1,37 @@
 {
-  "num_sentences": 13,
+  "num_sentences": 5,
   "keywords": [
-    "marketplace",
-    "marketplaces",
-    "ecommerce",
-    "authenticated",
-    "buyer",
-    "buyers",
-    "commerce",
-    "secure",
-    "registration",
-    "seller"
+    "kadu",
+    "nagpurmaharashtra",
+    "nagpur",
+    "maharashtra",
+    "devendra",
+    "negotiations",
+    "mumbai",
+    "bacchu",
+    "bombay",
+    "delegation"
   ],
-  "summary": "Secure SecondHand Marketplace is a revolutionary secondhand marketplace that aims to change the dynamics of buying and selling secondhand items. The marketplace brings together the buyer, the seller, and the administrator under a single ecosystem using the simplest issues of security, reliability, and convenience. Sellers benefit from the ability to create detailed product descriptions that are accompanied by images, descriptive texts, and competitive prices. Buyers are ensured a safe and easytouse platform for viewing, comparing, and buying secondhand goods easily.",
+  "summary": "The protest in Nagpur led by politician Bacchu Kadu has captured national attention in just one day. Kadu remains adamant that the Maharashtra government must grant a full loan waiver to farmers. On Thursday, the leader and his delegation will meet state officials again in Mumbai for the next round of negotiations.",
   "clusters": {
     "0": [
-      "Sellers benefit from the ability to create detailed product descriptions that are accompanied by images, descriptive texts, and competitive prices, thereby making their marketplace highly visible to potential consumers.",
-      "On the other hand, buyers are ensured a safe and easytouse platform for viewing, comparing, and buying secondhand items easily."
+      "Kadus dramatic move to block major entry roads into NagpurMaharashtra Chief Minister Devendra Fadnaviss home turfover the demand for a complete farm loan waiver forced the state government to respond swiftly."
     ],
     "1": [
-      "The marketplace finally intends to develop a scaleable and secure platform for secondhand trade that closes the gap between technology and consumer confidence in the digital economy."
+      "On Thursday, the leader and his delegation will meet state officials again in Mumbai for the next round of negotiations."
     ],
     "2": [
-      "The marketplace brings together the buyer, the seller, and the administrator under a single ecosystem using the simplest issues of security, reliability, and convenience that are otherwise associated with conventional secondhand buying and selling habits.",
-      "Administrators manage the marketplace for the purposes of ensuring regulation adherence, controlling the moderation of the marketplaces contents, and ensuring a safe and credible trading platform.",
-      "Such features include rolebased verification for authenticated interaction, secure payment mechanisms that help secure monetary transactions, and realtime communication functionalities such as chat and notices that help seamless negotiations between the buyer and the seller.",
-      "The platform also incorporates dataoriented insights such as demand patterns and pricing models, facilitating the making of informed decisions by the users."
+      "The protest in Nagpur led by politician Bacchu Kadu has captured national attention in just one day."
     ],
     "3": [
-      "Once the registration process is complete, users are provided access to a personalized interface that is designed to accommodate their unique roles.",
-      "Other incorporated systems such as verification of the users, fraudproofing, and transparent rating mechanisms are deployed for the purposes of validating confidence and reduction of risk."
+      "Yet, Kadu remains adamant that the Maharashtra government must grant a full loan waiver to farmers."
     ],
     "4": [
-      "Secure SecondHand Marketplace is a revolutionary secondhand marketplace that aims to change the dynamics of buying and selling secondhand items through trust, transparency, and access to ecommerce.",
-      "Beyond the facilitation of simple transactions, the Secure SecondHand Marketplace incorporates powerful features that boost usability and credibility.",
-      "By combining the efficiency of ecommerce and increased security controls, the Secure SecondHand Marketplace demonstrates a sustainable way of commerce.",
-      "Not only does the marketplace allow for the efficient utilization of secondhand goods but also for environmental sustainability by encouraging the reuse of items and reducing the generation of wastes."
+      "Two junior ministers were dispatched for talks, while the Bombay High Courts Nagpur Bench took suo motu cognisance, directing Kadu and his supporters to clear the roadsan order they complied with late on Wednesday."
     ]
   },
   "anomalies": [
-    2,
-    9
+    0
   ],
   "files": {
     "heatmap": "/output/heatmap.png",
